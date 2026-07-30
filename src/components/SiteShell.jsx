@@ -11,7 +11,7 @@ export function SiteChrome() {
 }
 
 export function SiteFooter() {
-  return <footer className="site-footer"><div className="site-container"><strong>HospitalMS Healthcare</strong><span>Compassionate care, made simple.</span><span>© {new Date().getFullYear()} HospitalMS</span></div></footer>
+  return <footer className="site-footer"><div className="site-container"><strong>HospitalMS Healthcare</strong><span>0712496142</span><a href="mailto:hospitalms@gmail.com">hospitalms@gmail.com</a><span>© {new Date().getFullYear()} HospitalMS</span></div></footer>
 }
 
 export default function SiteShell({ children }) {
