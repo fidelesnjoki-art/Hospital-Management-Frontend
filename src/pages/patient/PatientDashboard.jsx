@@ -1,0 +1,14 @@
+import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { getPatientDashboard } from '../../api/dashboard'
+import { useAuth } from '../../context/AuthContext'
+import AppointmentStatus from '../../components/AppointmentStatus'
+
+function Appointment({ item }) { return <article className="border-t border-ink/10 py-4 first:border-t-0"><div className="flex flex-wrap items-start justify-between gap-3"><div><p className="font-semibold">{item.doctor_name}</p><p className="mt-1 text-sm text-ink/60">{item.date} · {item.scheduled_time?.slice(0, 5)}</p></div><AppointmentStatus status={item.status} /></div>{item.status === 'completed' && (item.diagnosis || item.treatment) && <div className="mt-3 rounded bg-ink/5 p-3 text-sm"><p><b>Diagnosis:</b> {item.diagnosis || 'Not recorded'}</p><p className="mt-2"><b>Treatment:</b> {item.treatment || 'Not recorded'}</p></div>}</article> }
+export default function PatientDashboard() {
+ const { user } = useAuth(); const [data, setData] = useState(null); const [error, setError] = useState('')
+ useEffect(() => { getPatientDashboard().then(setData).catch(() => setError('Could not load your appointments.')) }, [])
+ if (error) return <div className="mx-auto max-w-5xl p-8"><p className="border-l-4 border-status-alert bg-status-alert/10 p-4 text-sm">{error}</p></div>
+ if (!data) return <p className="p-10 text-center text-sm text-ink/60">Loading your appointments...</p>
+ return <div className="mx-auto max-w-5xl px-5 py-10 sm:px-6 sm:py-14"><div className="flex flex-wrap items-end justify-between gap-4"><div><p className="text-xs font-semibold uppercase tracking-[.16em] text-ink/55">Patient portal</p><h1 className="mt-2 font-display text-4xl font-bold">Welcome, {user?.full_name || user?.username}</h1><p className="mt-2 text-sm text-ink/65">Manage your appointments and review completed visits.</p></div><Link to="/patient/book" className="bg-ink px-4 py-3 text-sm font-bold text-panel">Book appointment</Link></div><div className="mt-8 grid gap-6 md:grid-cols-2"><section className="border border-ink/15 bg-panel p-5"><h2 className="font-display text-2xl font-bold">Upcoming appointments</h2>{data.upcoming?.length ? <div className="mt-3">{data.upcoming.map((item) => <Appointment key={item.id} item={item} />)}</div> : <p className="mt-4 text-sm text-ink/65">No upcoming appointments. <Link className="font-semibold underline" to="/patient/book">Book a visit.</Link></p>}</section><section className="border border-ink/15 bg-panel p-5"><h2 className="font-display text-2xl font-bold">Appointment history</h2>{data.history?.length ? <div className="mt-3">{data.history.map((item) => <Appointment key={item.id} item={item} />)}</div> : <p className="mt-4 text-sm text-ink/65">Completed and cancelled appointments will appear here.</p>}</section></div></div>
+}
