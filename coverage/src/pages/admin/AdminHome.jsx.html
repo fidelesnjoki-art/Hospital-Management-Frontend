@@ -1,0 +1,121 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for src/pages/admin/AdminHome.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/pages/admin</a> AdminHome.jsx</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">64.28% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>27/42</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">61.11% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>11/18</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">65% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>13/20</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">85.71% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>6/7</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line medium'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { getDoctors } from '../../api/appointments'
+import { getAdminAppointments, updateAppointmentStatus } from '../../api/adminAppointments'
+import AppointmentStatus from '../../components/AppointmentStatus'
+const list = (data) =&gt; Array.isArray(data) ? data : <span class="branch-1 cbranch-no" title="branch not covered" >data?.results || data?.appointments || []</span>
+const statuses = ['pending', 'confirmed', 'completed', 'cancelled']
+export default function AdminHome() { const [doctors, setDoctors] = useState([]), [items, setItems] = useState([]), [filters, setFilters] = useState({ doctor: '', date: '', status: '' }), [loading, setLoading] = useState(true), [error, setError] = useState(''), [saving, setSaving] = useState(null)
+ async function <span class="fstat-no" title="function not covered" >load(n</span>ext = <span class="branch-0 cbranch-no" title="branch not covered" >filters) {</span> <span class="cstat-no" title="statement not covered" >setLoading(true); <span class="cstat-no" title="statement not covered" >s</span>etError(''); <span class="cstat-no" title="statement not covered" >t</span>ry { const data = <span class="cstat-no" title="statement not covered" >await getAdminAppointments(next); <span class="cstat-no" title="statement not covered" >s</span>etItems(list(data)) }</span> catch { <span class="cstat-no" title="statement not covered" >setError('Could not load appointments.') }</span> finally { <span class="cstat-no" title="statement not covered" >setLoading(false) }</span> }</span>
+ useEffect(() =&gt; { Promise.all([getDoctors(), getAdminAppointments({})]).then(([doctorData, appointmentData]) =&gt; { setDoctors(list(doctorData)); setItems(list(appointmentData)) }).<span class="fstat-no" title="function not covered" >catch(() =&gt; <span class="cstat-no" title="statement not covered" >s</span>etError('Could not load appointments.'))</span>.finally(() =&gt; setLoading(false)) }, [])
+ async function changeStatus(id, status) { setSaving(id); try { const updated = await updateAppointmentStatus(id, status); setItems((current) =&gt; current.map((item) =&gt; item.id === id ? { ...item, ...updated, status } : <span class="branch-1 cbranch-no" title="branch not covered" >item)</span>) } catch { <span class="cstat-no" title="statement not covered" >setError('Could not update the appointment status.') }</span> finally { setSaving(null) } }
+ return &lt;div className="mx-auto max-w-6xl px-5 py-10 sm:px-6 sm:py-14"&gt;&lt;div className="flex flex-wrap items-end justify-between gap-4"&gt;&lt;div&gt;&lt;p className="text-xs font-semibold uppercase tracking-[.16em] text-ink/55"&gt;Admin portal&lt;/p&gt;&lt;h1 className="mt-2 font-display text-4xl font-bold"&gt;Appointment management&lt;/h1&gt;&lt;p className="mt-3 text-sm text-ink/65"&gt;Review bookings and keep appointment statuses current.&lt;/p&gt;&lt;/div&gt;&lt;Link to="/admin/doctors" className="site-button site-button-primary"&gt;Manage doctors&lt;/Link&gt;&lt;/div&gt;{error &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;p className="mt-5 border-l-4 border-status-alert bg-status-alert/10 p-3 text-sm"&gt;{error}&lt;/p&gt;}&lt;</span>form <span class="fstat-no" title="function not covered" >onSubmit={(e</span>) =&gt; { <span class="cstat-no" title="statement not covered" >e.preventDefault(); <span class="cstat-no" title="statement not covered" >l</span>oad() }</span>} className="mt-7 grid gap-4 border border-ink/15 bg-panel p-4 sm:grid-cols-4"&gt;&lt;label className="text-sm font-semibold"&gt;Doctor&lt;select value={filters.doctor} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setFilters({ ...filters, doctor: e.target.value })} c</span>lassName="mt-2 w-full border border-ink/25 p-2 font-normal"&gt;&lt;option value=""&gt;All doctors&lt;/option&gt;{doctors.<span class="fstat-no" title="function not covered" >map((d</span>octor) =&gt; <span class="cstat-no" title="statement not covered" >&lt;option value={doctor.id} key={doctor.id}&gt;{doctor.name}&lt;/option&gt;)</span>}&lt;/select&gt;&lt;/label&gt;&lt;label className="text-sm font-semibold"&gt;Date&lt;input type="date" value={filters.date} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setFilters({ ...filters, date: e.target.value })} c</span>lassName="mt-2 w-full border border-ink/25 p-2 font-normal" /&gt;&lt;/label&gt;&lt;label className="text-sm font-semibold"&gt;Status&lt;select value={filters.status} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setFilters({ ...filters, status: e.target.value })} c</span>lassName="mt-2 w-full border border-ink/25 p-2 font-normal"&gt;&lt;option value=""&gt;All statuses&lt;/option&gt;{statuses.map((s) =&gt; &lt;option key={s} value={s}&gt;{s[0].toUpperCase() + s.slice(1)}&lt;/option&gt;)}&lt;/select&gt;&lt;/label&gt;&lt;button className="self-end bg-ink px-4 py-2.5 text-sm font-bold text-panel"&gt;Apply filters&lt;/button&gt;&lt;/form&gt;{loading ? &lt;p className="mt-8 text-sm text-ink/60"&gt;Loading appointments...&lt;/p&gt; : items.length ? &lt;div className="mt-6 overflow-x-auto border border-ink/15 bg-panel"&gt;&lt;table className="w-full min-w-225 text-sm"&gt;&lt;thead className="bg-ink text-left text-panel/75"&gt;&lt;tr&gt;{['Patient', 'Doctor', 'Date', 'Time', 'Status', 'Clinical notes', 'Update'].map((x) =&gt; &lt;th key={x} className="p-4"&gt;{x}&lt;/th&gt;)}&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;{items.map((item) =&gt; &lt;tr key={item.id} className="border-t border-ink/10 align-top"&gt;&lt;td className="p-4 font-semibold"&gt;{item.patient_username}&lt;/td&gt;&lt;td className="p-4"&gt;{item.doctor_name}&lt;/td&gt;&lt;td className="p-4"&gt;{item.date}&lt;/td&gt;&lt;td className="p-4"&gt;{item.scheduled_time?.slice(0, 5)}&lt;/td&gt;&lt;td className="p-4"&gt;&lt;AppointmentStatus status={item.status}/&gt;&lt;/td&gt;&lt;td className="max-w-80 whitespace-pre-wrap p-4 text-xs"&gt;&lt;b&gt;Diagnosis:&lt;/b&gt; {item.diagnosis || '—'}&lt;br/&gt;&lt;b&gt;Treatment:&lt;/b&gt; {item.treatment || '—'}&lt;/td&gt;&lt;td className="p-4"&gt;&lt;select disabled={saving === item.id} value={item.status} onChange={(e) =&gt; changeStatus(item.id, e.target.value)} className="border border-ink/25 p-2 text-xs disabled:opacity-50"&gt;{statuses.map((s) =&gt; &lt;option key={s}&gt;{s}&lt;/option&gt;)}&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;)}&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt; : &lt;p className="mt-6 border border-ink/15 bg-panel p-5 text-sm text-ink/65"&gt;No appointments match these filters.&lt;/p&gt;}&lt;/div&gt; }
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-07-31T08:28:02.368Z
+            </div>
+        <script src="../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
+    </body>
+</html>
+    

@@ -1,0 +1,124 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for src/pages/patient/PatientHome.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/pages/patient</a> PatientHome.jsx</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>0/50</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/28</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/18</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>0/8</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useEffect, useMemo, useState } from 'react'
+import { bookAppointment, getDoctors, getSlots } from '../../api/appointments'
+&nbsp;
+const <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >list = (v</span>alue) =&gt; <span class="cstat-no" title="statement not covered" >Array.isArray(value) ? value : value?.results || value?.doctors || value?.slots || []</span></span>
+export default function <span class="fstat-no" title="function not covered" >PatientHome() {</span>
+ const [doctors, setDoctors] = <span class="cstat-no" title="statement not covered" >useState([]), [</span>specialty, setSpecialty] = <span class="cstat-no" title="statement not covered" >useState(''), [</span>doctor, setDoctor] = <span class="cstat-no" title="statement not covered" >useState(null), [</span>slots, setSlots] = <span class="cstat-no" title="statement not covered" >useState([]), [</span>loading, setLoading] = <span class="cstat-no" title="statement not covered" >useState(true), [</span>loadingSlots, setLoadingSlots] = <span class="cstat-no" title="statement not covered" >useState(false), [</span>message, setMessage] = <span class="cstat-no" title="statement not covered" >useState(''), [</span>error, setError] = <span class="cstat-no" title="statement not covered" >useState(''), [</span>booking, setBooking] = <span class="cstat-no" title="statement not covered" >useState(false)</span>
+ const specialties = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >useMemo(() =&gt; <span class="cstat-no" title="statement not covered" >[</span>...new Set(doctors.<span class="fstat-no" title="function not covered" >map((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.specialty)</span>.filter(Boolean))].sort(), [</span>doctors])</span>
+ const shownDoctors = <span class="cstat-no" title="statement not covered" >specialty ? doctors.<span class="fstat-no" title="function not covered" >filter((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.specialty === specialty)</span> : doctors</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > useEffect(() =&gt; {</span> <span class="cstat-no" title="statement not covered" >getDoctors().<span class="fstat-no" title="function not covered" >then((d</span>ata) =&gt; <span class="cstat-no" title="statement not covered" >setDoctors(list(data)))</span>.<span class="fstat-no" title="function not covered" >catch(() =&gt; <span class="cstat-no" title="statement not covered" >s</span>etError('Could not load doctors.'))</span>.<span class="fstat-no" title="function not covered" >finally(() =&gt; <span class="cstat-no" title="statement not covered" >s</span>etLoading(false))</span> }</span>, [])</span>
+ async function <span class="fstat-no" title="function not covered" >selectDoctor(n</span>ext) { <span class="cstat-no" title="statement not covered" >setDoctor(next); <span class="cstat-no" title="statement not covered" >s</span>etLoadingSlots(true); <span class="cstat-no" title="statement not covered" >s</span>etSlots([]); <span class="cstat-no" title="statement not covered" >s</span>etError(''); <span class="cstat-no" title="statement not covered" >t</span>ry { const data = <span class="cstat-no" title="statement not covered" >await getSlots(next.id); c</span>onst today = <span class="cstat-no" title="statement not covered" >new Date().toISOString().slice(0, 10); <span class="cstat-no" title="statement not covered" >s</span>etSlots(list(data).<span class="fstat-no" title="function not covered" >filter((s</span>lot) =&gt; <span class="cstat-no" title="statement not covered" >!slot.is_booked &amp;&amp; slot.date &gt;= today)</span>) }</span> catch { <span class="cstat-no" title="statement not covered" >setError('Could not load this doctor’s available slots.') }</span> finally { <span class="cstat-no" title="statement not covered" >setLoadingSlots(false) }</span> }</span>
+ async function <span class="fstat-no" title="function not covered" >book(s</span>lot) { <span class="cstat-no" title="statement not covered" >setBooking(true); <span class="cstat-no" title="statement not covered" >s</span>etError(''); <span class="cstat-no" title="statement not covered" >t</span>ry { <span class="cstat-no" title="statement not covered" >await bookAppointment(slot.id); <span class="cstat-no" title="statement not covered" >s</span>etMessage(`Your appointment with ${doctor.name} on ${slot.date} at ${slot.start_time?.slice(0, 5)} is confirmed.`); <span class="cstat-no" title="statement not covered" >a</span>wait selectDoctor(doctor) }</span> catch { <span class="cstat-no" title="statement not covered" >setError('This slot is no longer available. The available times have been refreshed.'); <span class="cstat-no" title="statement not covered" >a</span>wait selectDoctor(doctor) }</span> finally { <span class="cstat-no" title="statement not covered" >setBooking(false) }</span> }</span>
+<span class="cstat-no" title="statement not covered" > return &lt;div className="mx-auto max-w-5xl px-5 py-10 sm:px-6 sm:py-14"&gt;&lt;p className="text-xs font-semibold uppercase tracking-[.16em] text-ink/55"&gt;Patient portal&lt;/p&gt;&lt;h1 className="mt-2 font-display text-4xl font-bold"&gt;Book an appointment&lt;/h1&gt;&lt;p className="mt-3 text-sm text-ink/65"&gt;Choose a doctor, then select an available future time.&lt;/p&gt;{message &amp;&amp; &lt;p className="mt-5 border-l-4 border-status-ok bg-status-ok/10 p-3 text-sm"&gt;{message}&lt;/p&gt;}{error &amp;&amp; &lt;p className="mt-5 border-l-4 border-status-alert bg-status-alert/10 p-3 text-sm"&gt;{error}&lt;/p&gt;}&lt;div className="mt-8 grid gap-6 lg:grid-cols-2"&gt;&lt;section className="border border-ink/15 bg-panel p-5"&gt;&lt;label className="block text-sm font-semibold"&gt;Filter by specialty&lt;select value={specialty} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; { <span class="cstat-no" title="statement not covered" >setSpecialty(e.target.value); <span class="cstat-no" title="statement not covered" >s</span>etDoctor(null); <span class="cstat-no" title="statement not covered" >s</span>etSlots([]) }</span>} className="mt-2 w-full border border-ink/25 p-3 font-normal"&gt;&lt;option value=""&gt;All specialties&lt;/option&gt;{specialties.<span class="fstat-no" title="function not covered" >map((n</span>ame) =&gt; <span class="cstat-no" title="statement not covered" >&lt;option key={name}&gt;{name}&lt;/option&gt;)</span>}&lt;/select&gt;&lt;/label&gt;&lt;h2 className="mt-6 font-display text-2xl font-bold"&gt;Doctors&lt;/h2&gt;{loading ? &lt;p className="mt-4 text-sm text-ink/60"&gt;Loading doctors...&lt;/p&gt; : shownDoctors.length ? &lt;div className="mt-4 space-y-3"&gt;{shownDoctors.<span class="fstat-no" title="function not covered" >map((i</span>tem) =&gt; <span class="cstat-no" title="statement not covered" >&lt;button key={item.id} <span class="fstat-no" title="function not covered" >onClick={() =&gt; <span class="cstat-no" title="statement not covered" >s</span>electDoctor(item)} c</span>lassName={`w-full border p-4 text-left ${doctor?.id === item.id ? 'border-ink bg-ink/5' : 'border-ink/15'}`}&gt;&lt;p className="font-semibold"&gt;{item.name}&lt;/p&gt;&lt;p className="mt-1 text-sm text-ink/60"&gt;{item.specialty}&lt;/p&gt;{item.bio &amp;&amp; &lt;p className="mt-2 text-xs text-ink/55"&gt;{item.bio}&lt;/p&gt;}&lt;/button&gt;)</span>}&lt;/div&gt; : &lt;p className="mt-4 text-sm text-ink/65"&gt;No doctors match this specialty.&lt;/p&gt;}&lt;/section&gt;&lt;section className="border border-ink/15 bg-panel p-5"&gt;&lt;h2 className="font-display text-2xl font-bold"&gt;Available slots&lt;/h2&gt;{!doctor ? &lt;p className="mt-4 text-sm text-ink/65"&gt;Select a doctor to view available times.&lt;/p&gt; : loadingSlots ? &lt;p className="mt-4 text-sm text-ink/60"&gt;Loading available slots...&lt;/p&gt; : slots.length ? &lt;div className="mt-4 grid grid-cols-2 gap-3"&gt;{slots.<span class="fstat-no" title="function not covered" >map((s</span>lot) =&gt; <span class="cstat-no" title="statement not covered" >&lt;button disabled={booking} key={slot.id} <span class="fstat-no" title="function not covered" >onClick={() =&gt; <span class="cstat-no" title="statement not covered" >b</span>ook(slot)} c</span>lassName="border border-ink/15 p-3 text-left hover:border-ink disabled:opacity-50"&gt;&lt;p className="font-semibold"&gt;{slot.start_time?.slice(0, 5)}&lt;/p&gt;&lt;p className="mt-1 text-xs text-ink/55"&gt;{slot.date}&lt;/p&gt;&lt;/button&gt;)</span>}&lt;/div&gt; : &lt;p className="mt-4 text-sm text-ink/65"&gt;No available future slots for this doctor.&lt;/p&gt;}&lt;/section&gt;&lt;/div&gt;&lt;/div&gt;</span>
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-07-31T08:28:02.368Z
+            </div>
+        <script src="../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
+    </body>
+</html>
+    
