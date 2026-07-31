@@ -7,9 +7,8 @@ export async function login(username, password) {
   return res.data
 }
 
-export async function register(fullName, email, password, role, phone, doctorName, specialty) {
-  const payload = { full_name: fullName, email, password, role, phone }
-  if (role === 'doctor') Object.assign(payload, { doctor_name: doctorName, specialty })
+export async function register(fullName, email, password, phone) {
+  const payload = { full_name: fullName, email, password, phone }
   const res = await apiClient.post('/auth/register/', payload)
   return res.data
 }
