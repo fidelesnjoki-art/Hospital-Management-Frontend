@@ -1,0 +1,181 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for src/pages/admin/AdminDoctors.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/pages/admin</a> AdminDoctors.jsx</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">36.52% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>42/115</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">35.8% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>29/81</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">26.47% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>9/34</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">52.38% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>11/21</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useEffect, useRef, useState } from 'react'
+import { getDoctors } from '../../api/appointments'
+import { createDoctor, deleteDoctor } from '../../api/adminDoctors'
+&nbsp;
+const initialForm = { doctor_name: '', email: '', password: '', username: '', full_name: '', phone: '', specialty: '', bio: '', photo_url: '' }
+const optionalFields = ['username', 'full_name', 'phone', 'specialty', 'bio', 'photo_url']
+const list = (data) =&gt; Array.isArray(data) ? data : <span class="branch-1 cbranch-no" title="branch not covered" >data?.results || data?.doctors || []</span>
+&nbsp;
+function <span class="fstat-no" title="function not covered" >DeleteDialog({</span> doctor, deleting, onCancel, onConfirm }) {
+  const confirmRef = <span class="cstat-no" title="statement not covered" >useRef(null)</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  useEffect(() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >    confirmRef.current?.focus()</span>
+    const <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >escape = (e</span>vent) =&gt; { <span class="cstat-no" title="statement not covered" >if (event.key === 'Escape' &amp;&amp; !deleting) <span class="cstat-no" title="statement not covered" >onCancel() }</span></span></span>
+<span class="cstat-no" title="statement not covered" >    document.addEventListener('keydown', escape)</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    return () =&gt; <span class="cstat-no" title="statement not covered" >d</span>ocument.removeEventListener('keydown', escape)</span></span>
+  }, [deleting, onCancel])
+<span class="cstat-no" title="statement not covered" >  return &lt;div className="dialog-backdrop" role="presentation" <span class="fstat-no" title="function not covered" >onMouseDown={(e</span>vent) =&gt; { <span class="cstat-no" title="statement not covered" >if (event.target === event.currentTarget &amp;&amp; !deleting) <span class="cstat-no" title="statement not covered" >onCancel() }</span></span>}&gt;&lt;section className="dialog-card" role="dialog" aria-modal="true" aria-labelledby="delete-doctor-title" aria-describedby="delete-doctor-message"&gt;&lt;p className="site-eyebrow"&gt;Permanent action&lt;/p&gt;&lt;h2 id="delete-doctor-title" className="mt-2 font-display text-2xl font-bold"&gt;Delete doctor account?&lt;/h2&gt;&lt;p id="delete-doctor-message" className="mt-3 text-sm text-ink/65"&gt;You are about to permanently delete {doctor.name || doctor.doctor_name}&amp;apos;s account. This will remove the doctor profile, login account, related appointment slots, and related appointments. This action cannot be undone.&lt;/p&gt;&lt;div className="mt-7 flex flex-wrap justify-end gap-3"&gt;&lt;button disabled={deleting} onClick={onCancel} className="site-button site-button-ghost"&gt;Cancel&lt;/button&gt;&lt;button ref={confirmRef} disabled={deleting} onClick={onConfirm} className="site-button site-button-danger"&gt;{deleting ? 'Deleting…' : 'Delete permanently'}&lt;/button&gt;&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;</span>
+}
+&nbsp;
+export default function AdminDoctors() {
+  const [form, setForm] = useState(initialForm); const [errors, setErrors] = useState({}); const [message, setMessage] = useState(''); const [submitting, setSubmitting] = useState(false)
+  const [doctors, setDoctors] = useState([]); const [loadingDoctors, setLoadingDoctors] = useState(true); const [listError, setListError] = useState(''); const [selectedDoctor, setSelectedDoctor] = useState(null); const [deleting, setDeleting] = useState(false)
+  const deleteTrigger = useRef(null)
+  const <span class="fstat-no" title="function not covered" >set = (n</span>ame, value) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >setForm((c</span>urrent) =&gt; (<span class="cstat-no" title="statement not covered" >{ ...current, [name]: value }))</span></span>
+  const fieldError = (name) =&gt; errors[name] &amp;&amp; &lt;p className="mt-1 text-xs text-status-alert"&gt;{Array.isArray(errors[name]) ? <span class="branch-0 cbranch-no" title="branch not covered" >errors[name][0] : e</span>rrors[name]}&lt;/p&gt;
+  async function <span class="fstat-no" title="function not covered" >loadDoctors() {</span> <span class="cstat-no" title="statement not covered" >setLoadingDoctors(true); <span class="cstat-no" title="statement not covered" >s</span>etListError(''); <span class="cstat-no" title="statement not covered" >t</span>ry { <span class="cstat-no" title="statement not covered" >setDoctors(list(await getDoctors())) }</span> catch { <span class="cstat-no" title="statement not covered" >setListError('Could not load doctors. Please try again.') }</span> finally { <span class="cstat-no" title="statement not covered" >setLoadingDoctors(false) }</span> }</span>
+  useEffect(() =&gt; { let active = true; getDoctors().then((data) =&gt; { <span class="missing-if-branch" title="else path not taken" >E</span>if (active) setDoctors(list(data)) }).<span class="fstat-no" title="function not covered" >catch(() =&gt; {</span> <span class="cstat-no" title="statement not covered" >if (active) <span class="cstat-no" title="statement not covered" >setListError('Could not load doctors. Please try again.') }</span></span>).finally(() =&gt; { <span class="missing-if-branch" title="else path not taken" >E</span>if (active) setLoadingDoctors(false) }); return () =&gt; { active = false } }, [])
+  async function submit(event) { event.preventDefault(); setMessage(''); setErrors({}); const next = {}; <span class="missing-if-branch" title="else path not taken" >E</span>if (!form.doctor_name.trim()) next.doctor_name = 'Doctor display name is required.'; <span class="missing-if-branch" title="else path not taken" >E</span>if (!/^\S+@\S+\.\S+$/.test(form.email)) next.email = 'Enter a valid email address.'; <span class="missing-if-branch" title="else path not taken" >E</span>if (form.password.length &lt; 8) next.password = 'Password must be at least 8 characters.'; <span class="missing-if-branch" title="if path not taken" >I</span>if (form.photo_url &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!/^https?:\/\//i.test(form.photo_url)) <span class="cstat-no" title="statement not covered" >n</span>ext.photo_url = 'Enter a valid URL including http:// or https://.'; <span class="missing-if-branch" title="else path not taken" >E</span>i</span>f (Object.keys(next).length) { setErrors(next); return } const payload = <span class="cstat-no" title="statement not covered" >{ doctor_name: form.doctor_name.trim(), email: form.email.trim(), password: form.password }; <span class="cstat-no" title="statement not covered" >o</span>ptionalFields.<span class="fstat-no" title="function not covered" >forEach((n</span>ame) =&gt; { <span class="cstat-no" title="statement not covered" >if (form[name].trim()) <span class="cstat-no" title="statement not covered" >payload[name] = form[name].trim() }</span></span>); <span class="cstat-no" title="statement not covered" >i</span>f (!payload.full_name) <span class="cstat-no" title="statement not covered" >payload.full_name = payload.doctor_name; <span class="cstat-no" title="statement not covered" >s</span></span>etSubmitting(true); <span class="cstat-no" title="statement not covered" >t</span>ry { <span class="cstat-no" title="statement not covered" >await createDoctor(payload); <span class="cstat-no" title="statement not covered" >s</span>etForm(initialForm); <span class="cstat-no" title="statement not covered" >s</span>etMessage('Doctor account created successfully.'); <span class="cstat-no" title="statement not covered" >a</span>wait loadDoctors() }</span> catch (error) { <span class="cstat-no" title="statement not covered" >if (error.response?.status === 403) <span class="cstat-no" title="statement not covered" >setErrors({ general: 'Only administrators can create doctor accounts.' }); else <span class="cstat-no" title="statement not covered" >i</span>f (error.response?.status === 400 &amp;&amp; error.response.data) <span class="cstat-no" title="statement not covered" >setErrors(error.response.data); else <span class="cstat-no" title="statement not covered" >s</span>etErrors({ general: 'We could not create the doctor account. Please try again.' }) }</span></span></span> finally { <span class="cstat-no" title="statement not covered" >setSubmitting(false) }</span> }</span>
+  async function <span class="fstat-no" title="function not covered" >confirmDelete() {</span> <span class="cstat-no" title="statement not covered" >if (!selectedDoctor) <span class="cstat-no" title="statement not covered" >return; <span class="cstat-no" title="statement not covered" >s</span></span>etDeleting(true); <span class="cstat-no" title="statement not covered" >s</span>etListError(''); <span class="cstat-no" title="statement not covered" >t</span>ry { <span class="cstat-no" title="statement not covered" >await deleteDoctor(selectedDoctor.id); <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >s</span>etDoctors((c</span>urrent) =&gt; <span class="cstat-no" title="statement not covered" >current.<span class="fstat-no" title="function not covered" >filter((d</span>octor) =&gt; <span class="cstat-no" title="statement not covered" >doctor.id !== selectedDoctor.id)</span>)</span>; <span class="cstat-no" title="statement not covered" >s</span>etSelectedDoctor(null); <span class="cstat-no" title="statement not covered" >s</span>etMessage('Doctor account deleted successfully.'); <span class="cstat-no" title="statement not covered" >d</span>eleteTrigger.current?.focus() }</span> catch (error) { <span class="cstat-no" title="statement not covered" >setListError(error.response?.status === 403 ? 'Only administrators can delete doctor accounts.' : 'We could not delete the doctor account. Please try again.'); <span class="cstat-no" title="statement not covered" >s</span>etSelectedDoctor(null); <span class="cstat-no" title="statement not covered" >d</span>eleteTrigger.current?.focus() }</span> finally { <span class="cstat-no" title="statement not covered" >setDeleting(false) }</span> }</span>
+  function <span class="fstat-no" title="function not covered" >cancelDelete() {</span> <span class="cstat-no" title="statement not covered" >if (deleting) <span class="cstat-no" title="statement not covered" >return; <span class="cstat-no" title="statement not covered" >s</span></span>etSelectedDoctor(null); <span class="cstat-no" title="statement not covered" >d</span>eleteTrigger.current?.focus() }</span>
+  return &lt;div className="mx-auto max-w-5xl px-5 py-10 sm:px-6 sm:py-14"&gt;&lt;p className="site-eyebrow"&gt;Admin portal&lt;/p&gt;&lt;h1 className="mt-2 font-display text-4xl font-bold"&gt;Manage doctors&lt;/h1&gt;&lt;p className="mt-3 text-sm text-ink/65"&gt;Create accounts and manage your doctor directory.&lt;/p&gt;{message &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;p className="mt-6 border-l-4 border-status-ok bg-status-ok/10 p-3 text-sm"&gt;{message}&lt;/p&gt;}{e</span>rrors.general &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;p className="site-alert mt-6"&gt;{errors.general}&lt;/p&gt;}&lt;</span>form onSubmit={submit} className="site-card mt-8 grid gap-5 p-6 sm:grid-cols-2"&gt;&lt;div className="sm:col-span-2"&gt;&lt;h2 className="font-display text-2xl font-bold"&gt;Add a doctor&lt;/h2&gt;&lt;p className="mt-1 text-sm text-ink/60"&gt;Fields marked required are needed to create the account.&lt;/p&gt;&lt;/div&gt;&lt;label className="block text-sm font-semibold"&gt;Doctor display name *&lt;input required value={form.doctor_name} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >set('doctor_name', e.target.value)} <span class="fstat-no" title="function not covered" >o</span>nBlur={() =&gt; <span class="cstat-no" title="statement not covered" >!</span>form.full_name &amp;&amp; set('full_name', form.doctor_name)} c</span>lassName="mt-2 w-full p-3 font-normal" /&gt;{fieldError('doctor_name')}&lt;/label&gt;&lt;label className="block text-sm font-semibold"&gt;Account full name&lt;input value={form.full_name} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >set('full_name', e.target.value)} c</span>lassName="mt-2 w-full p-3 font-normal" /&gt;{fieldError('full_name')}&lt;/label&gt;&lt;label className="block text-sm font-semibold"&gt;Email *&lt;input required type="email" value={form.email} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >set('email', e.target.value)} c</span>lassName="mt-2 w-full p-3 font-normal" /&gt;{fieldError('email')}&lt;/label&gt;&lt;label className="block text-sm font-semibold"&gt;Password *&lt;input required minLength="8" type="password" value={form.password} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >set('password', e.target.value)} c</span>lassName="mt-2 w-full p-3 font-normal" /&gt;{fieldError('password')}&lt;/label&gt;&lt;label className="block text-sm font-semibold"&gt;Username&lt;input value={form.username} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >set('username', e.target.value)} c</span>lassName="mt-2 w-full p-3 font-normal" /&gt;&lt;/label&gt;&lt;label className="block text-sm font-semibold"&gt;Phone number&lt;input type="tel" value={form.phone} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >set('phone', e.target.value)} c</span>lassName="mt-2 w-full p-3 font-normal" /&gt;&lt;/label&gt;&lt;label className="block text-sm font-semibold"&gt;Specialty&lt;input value={form.specialty} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >set('specialty', e.target.value)} c</span>lassName="mt-2 w-full p-3 font-normal" /&gt;&lt;/label&gt;&lt;label className="block text-sm font-semibold"&gt;Photo URL&lt;input type="url" value={form.photo_url} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >set('photo_url', e.target.value)} c</span>lassName="mt-2 w-full p-3 font-normal" /&gt;{fieldError('photo_url')}&lt;/label&gt;&lt;label className="block text-sm font-semibold sm:col-span-2"&gt;Professional biography&lt;textarea value={form.bio} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >set('bio', e.target.value)} c</span>lassName="mt-2 min-h-28 w-full p-3 font-normal" /&gt;&lt;/label&gt;&lt;div className="sm:col-span-2"&gt;&lt;button disabled={submitting} className="site-button site-button-primary disabled:opacity-50"&gt;{submitting ? <span class="branch-0 cbranch-no" title="branch not covered" >'Creating account…' : '</span>Create doctor account'}&lt;/button&gt;&lt;/div&gt;&lt;/form&gt;&lt;section className="mt-10"&gt;&lt;div className="flex items-end justify-between gap-4"&gt;&lt;div&gt;&lt;p className="site-eyebrow"&gt;Directory&lt;/p&gt;&lt;h2 className="mt-2 font-display text-2xl font-bold"&gt;Available doctors&lt;/h2&gt;&lt;/div&gt;&lt;button onClick={loadDoctors} disabled={loadingDoctors} className="site-button site-button-ghost"&gt;Refresh&lt;/button&gt;&lt;/div&gt;{listError &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;p className="site-alert mt-5"&gt;{listError}&lt;/p&gt;}{l</span>oadingDoctors ? &lt;p className="mt-5 text-sm text-ink/60"&gt;Loading doctors…&lt;/p&gt; : doctors.length ? &lt;div className="site-card mt-5 overflow-x-auto"&gt;&lt;table className="w-full min-w-160 text-left text-sm"&gt;&lt;thead&gt;&lt;tr className="border-b border-ink/15 text-ink/60"&gt;&lt;th className="p-4"&gt;Doctor&lt;/th&gt;&lt;th className="p-4"&gt;Specialty&lt;/th&gt;&lt;th className="p-4"&gt;ID&lt;/th&gt;&lt;th className="p-4"&gt;Slots&lt;/th&gt;&lt;th className="p-4"&gt;&lt;span className="sr-only"&gt;Actions&lt;/span&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;{doctors.map((doctor) =&gt; &lt;tr key={doctor.id} className="border-b border-ink/10 last:border-0"&gt;&lt;td className="p-4 font-semibold"&gt;{doctor.photo_url &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;img className="doctor-photo" src={doctor.photo_url} alt="" /&gt;} </span>{doctor.name || doctor.doctor_name}&lt;/td&gt;&lt;td className="p-4 text-ink/65"&gt;{doctor.specialty || <span class="branch-1 cbranch-no" title="branch not covered" >'—'}&lt;/td&gt;</span>&lt;td className="p-4 text-ink/65"&gt;{doctor.id}&lt;/td&gt;&lt;td className="p-4 text-ink/65"&gt;{doctor.available_slots ?? '—'}&lt;/td&gt;&lt;td className="p-4 text-right"&gt;&lt;button ref={deleteTrigger} <span class="fstat-no" title="function not covered" >onClick={(e</span>vent) =&gt; { <span class="cstat-no" title="statement not covered" >deleteTrigger.current = event.currentTarget; <span class="cstat-no" title="statement not covered" >s</span>etSelectedDoctor(doctor) }</span>} className="site-button site-button-danger" aria-label={`Delete ${doctor.name || doctor.doctor_name}`}&gt;Delete&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;)}&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt; : &lt;p className="site-card mt-5 p-5 text-sm text-ink/65"&gt;No doctors are currently available.&lt;/p&gt;}&lt;/section&gt;{selectedDoctor &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;DeleteDialog doctor={selectedDoctor} deleting={deleting} onCancel={cancelDelete} onConfirm={confirmDelete} /&gt;}&lt;/div&gt;</span>
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-07-31T08:28:02.368Z
+            </div>
+        <script src="../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
+    </body>
+</html>
+    
