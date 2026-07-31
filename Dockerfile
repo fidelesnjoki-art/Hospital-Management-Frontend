@@ -1,7 +1,12 @@
 FROM node:22-alpine AS build
 WORKDIR /app
+
+ENV NODE_ENV=development
+ENV npm_config_production=false
+
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --include=dev
+
 COPY . .
 ARG VITE_API_URL=https://cliniq-backend-oot3.onrender.com/api
 ENV VITE_API_URL=$VITE_API_URL
