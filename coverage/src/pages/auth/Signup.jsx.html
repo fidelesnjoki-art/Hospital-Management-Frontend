@@ -1,0 +1,103 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for src/pages/auth/Signup.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/pages/auth</a> Signup.jsx</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>0/23</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/7</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/7</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>0/1</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { login, register } from '../../api/auth'
+import { useAuth } from '../../context/AuthContext'
+import SiteShell from '../../components/SiteShell'
+export default function <span class="fstat-no" title="function not covered" >Signup() {</span> const [form, setForm] = <span class="cstat-no" title="statement not covered" >useState({ fullName: '', email: '', password: '', phone: '' }), [</span>error, setError] = <span class="cstat-no" title="statement not covered" >useState(''), [</span>loading, setLoading] = <span class="cstat-no" title="statement not covered" >useState(false); c</span>onst { refreshUser } = <span class="cstat-no" title="statement not covered" >useAuth()</span>; const navigate = <span class="cstat-no" title="statement not covered" >useNavigate()</span>; const <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >set = (k</span>ey, value) =&gt; <span class="cstat-no" title="statement not covered" >setForm({ ...form, [key]: value }); a</span></span>sync function <span class="fstat-no" title="function not covered" >submit(e</span>) { <span class="cstat-no" title="statement not covered" >e.preventDefault(); <span class="cstat-no" title="statement not covered" >s</span>etLoading(true); <span class="cstat-no" title="statement not covered" >s</span>etError(''); <span class="cstat-no" title="statement not covered" >t</span>ry { <span class="cstat-no" title="statement not covered" >await register(form.fullName, form.email, form.password, form.phone); <span class="cstat-no" title="statement not covered" >a</span>wait login(form.email, form.password); <span class="cstat-no" title="statement not covered" >a</span>wait refreshUser(); <span class="cstat-no" title="statement not covered" >n</span>avigate('/patient') }</span> catch (err) { const data = <span class="cstat-no" title="statement not covered" >err.response?.data; <span class="cstat-no" title="statement not covered" >s</span>etError(data?.detail || Object.values(data || {})[0]?.[0] || 'Could not create your account.') }</span> finally { <span class="cstat-no" title="statement not covered" >setLoading(false) }</span> }</span> <span class="cstat-no" title="statement not covered" >return &lt;SiteShell&gt;&lt;div className="flex min-h-[calc(100vh-180px)] items-center justify-center bg-paper p-5"&gt;&lt;form onSubmit={submit} className="site-card w-full max-w-md p-7 sm:p-9"&gt;&lt;p className="site-eyebrow"&gt;Join HospitalMS&lt;/p&gt;&lt;h1 className="mt-2 font-display text-3xl font-bold"&gt;Create your patient account&lt;/h1&gt;&lt;p className="mt-2 text-sm text-ink/60"&gt;Register to book and manage your appointments.&lt;/p&gt;{error &amp;&amp; &lt;p className="site-alert mt-5"&gt;{error}&lt;/p&gt;}&lt;label className="mt-6 block text-sm font-semibold"&gt;Full name&lt;input required value={form.fullName} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >set('fullName', e.target.value)} c</span>lassName="mt-2 w-full p-3 font-normal" /&gt;&lt;/label&gt;&lt;label className="mt-5 block text-sm font-semibold"&gt;Email&lt;input required type="email" value={form.email} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >set('email', e.target.value)} c</span>lassName="mt-2 w-full p-3 font-normal" /&gt;&lt;/label&gt;&lt;label className="mt-5 block text-sm font-semibold"&gt;Phone&lt;input required value={form.phone} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >set('phone', e.target.value)} c</span>lassName="mt-2 w-full p-3 font-normal" /&gt;&lt;/label&gt;&lt;label className="mt-5 block text-sm font-semibold"&gt;Password&lt;input required minLength="8" type="password" value={form.password} <span class="fstat-no" title="function not covered" >onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >set('password', e.target.value)} c</span>lassName="mt-2 w-full p-3 font-normal" /&gt;&lt;/label&gt;&lt;button disabled={loading} className="site-button site-button-primary mt-7 w-full"&gt;{loading ? 'Creating account...' : 'Create account'}&lt;/button&gt;&lt;p className="mt-6 text-center text-sm text-ink/65"&gt;Already registered? &lt;Link to="/login" className="font-semibold underline"&gt;Sign in&lt;/Link&gt;&lt;/p&gt;&lt;/form&gt;&lt;/div&gt;&lt;/SiteShell&gt; }</span>
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-07-31T08:28:02.368Z
+            </div>
+        <script src="../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
+    </body>
+</html>
+    
